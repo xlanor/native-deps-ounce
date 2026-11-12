@@ -12,7 +12,7 @@ deps = [
 ]
 
 [toolchain]
-image = "devkita64-ounce:20261112c"
+image = "devkita64-ounce:20261113"
 gcc = "16"
 packages = [
   "make",
