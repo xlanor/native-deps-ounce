@@ -8,6 +8,7 @@ deps = [
   "ffmpeg",
   "opus",
   "json-c",
+  "sdl2",
 ]
 
 [toolchain]
