@@ -1,0 +1,37 @@
+architectures = ["aarch64"]
+primary_target = "ounce"
+
+deps = [
+  "nghttp2",
+  "curl",
+  "simdutf",
+  "ffmpeg",
+  "opus",
+  "json-c",
+]
+
+[toolchain]
+image = "devkita64-ounce:20261112c"
+gcc = "16"
+packages = [
+  "make",
+  "cmake",
+  "ninja-build",
+  "pkg-config",
+  "python3",
+  "perl",
+  "patch",
+  "git",
+  "ca-certificates",
+  "curl",
+  "jq",
+  "rsync",
+  "xz-utils",
+  "bzip2",
+  "zstd",
+]
+
+[toolchain.runners]
+aarch64 = "ubuntu-24.04"
+
+[targets.ounce]

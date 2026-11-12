@@ -1,0 +1,18 @@
+version = "0.18"
+url = "https://s3.amazonaws.com/json-c_releases/releases/json-c-{version}.tar.gz"
+sha256 = "876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724"
+kind = "cmake"
+
+[cmake_options]
+BUILD_SHARED_LIBS = "OFF"
+BUILD_STATIC_LIBS = "ON"
+BUILD_APPS = "OFF"
+BUILD_TESTING = "OFF"
+DISABLE_WERROR = "ON"
+DISABLE_EXTRA_LIBS = "ON"
+HAVE_SNPRINTF = "1"
+HAVE_DECL_INFINITY = "1"
+HAVE_DECL_ISINF = "1"
+HAVE_DECL_ISNAN = "1"
+HAVE_DECL_NAN = "1"
+HAVE_VASPRINTF = "1"
