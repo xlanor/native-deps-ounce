@@ -12,10 +12,10 @@ toolchain_check_config() {
 
 toolchain_gcc() { printf '%s/devkitA64/bin/aarch64-none-elf-gcc' "${DEVKITPRO:-/opt/devkitpro}"; }
 
-toolchain_sdk_version() { sed -n 's/^ounce-sdk //p' "${DEVKITPRO:-/opt/devkitpro}/ounce-sdk-version.txt" 2>/dev/null; }
+toolchain_sdk_version() { sed -n 's/^ounce-devkit //p' "${DEVKITPRO:-/opt/devkitpro}/ounce-devkit-version.txt" 2>/dev/null; }
 
 toolchain_id() {
-  printf 'devkitA64 gcc %s ounce-sdk %s cmake %s' \
+  printf 'devkitA64 gcc %s ounce-devkit %s cmake %s' \
     "$("$(toolchain_gcc)" -dumpfullversion 2>/dev/null)" \
     "$(toolchain_sdk_version)" \
     "$(cmake --version 2>/dev/null | sed -n '1s/^cmake version //p')"
@@ -28,7 +28,7 @@ toolchain_setup() {
   DEVKITPRO=${DEVKITPRO:-/opt/devkitpro}
   ounce="$DEVKITPRO/libounce"
   [ -f "$ounce/lib/libounce.a" ] || die "libounce not found under $DEVKITPRO; build inside $(config_get '.config.toolchain.image')"
-  [ -n "$(toolchain_sdk_version)" ] || die "$DEVKITPRO/ounce-sdk-version.txt is missing; install the ounce SDK again"
+  [ -n "$(toolchain_sdk_version)" ] || die "$DEVKITPRO/ounce-devkit-version.txt is missing; install the ounce devkit again"
   for tool in make cmake ninja python3 perl patch git; do need "$tool"; done
   bin="$DEVKITPRO/devkitA64/bin"
   export PATH="$bin:$PATH"
