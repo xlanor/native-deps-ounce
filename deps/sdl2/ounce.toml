@@ -1,6 +1,6 @@
 version = "2.28.5-ounce-audio-joystick"
-repo = "https://github.com/xlanor/ouncelibs.git"
-ref = "sdl2"
+repo = "https://github.com/xlanor/sdl2-ounce.git"
+ref = "main"
 commit = "afcd3d644d0aca84853e8018638f67d84242d109"
 kind = "cmake"
 
